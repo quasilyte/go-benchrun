@@ -117,4 +117,4 @@ name             old time/op  new time/op  delta
 EmptySliceLit-8  5.75ns ± 2%  6.50ns ± 9%  +13.12%  (p=0.008 n=5+5)
 ```
 
-If there are unit tests (non-benchmarks), you can specify `-run` flag for `go test`, as usual.
+To skip unit tests, specify `-run` flag for `go test`, as usual.
