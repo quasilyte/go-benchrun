@@ -91,30 +91,30 @@ func BenchmarkMakeEmptySlice(b *testing.B) {
 In order to compare `BenchmarkEmptySliceLit` and `BenchmarkMakeEmptySlice` you do:
 
 ```bash
-$ benchrun EmptySliceLit MakeEmptySlice -v -count=5 .
-	Running old benchmarks:
+$ go-benchrun EmptySliceLit MakeEmptySlice -v -count=5 .
+  Running old benchmarks:
 goos: linux
 goarch: amd64
-BenchmarkEmptySliceLit-8   	300000000	         6.08 ns/op
-BenchmarkEmptySliceLit-8   	200000000	         5.83 ns/op
-BenchmarkEmptySliceLit-8   	300000000	         5.85 ns/op
-BenchmarkEmptySliceLit-8   	300000000	         5.89 ns/op
-BenchmarkEmptySliceLit-8   	300000000	         5.71 ns/op
+BenchmarkEmptySliceLit-8   	300000000	         5.79 ns/op
+BenchmarkEmptySliceLit-8   	300000000	         5.66 ns/op
+BenchmarkEmptySliceLit-8   	300000000	         5.70 ns/op
+BenchmarkEmptySliceLit-8   	300000000	         5.75 ns/op
+BenchmarkEmptySliceLit-8   	300000000	         5.84 ns/op
 PASS
-ok  	_/home/quasilyte/CODE/go/bench	11.184s
-	Running new benchmarks:
+ok  	_/home/quasilyte/CODE/go/bench	11.595s
+  Running new benchmarks:
 goos: linux
 goarch: amd64
-BenchmarkMakeEmptySlice-8   	200000000	         7.68 ns/op
-BenchmarkMakeEmptySlice-8   	200000000	         8.20 ns/op
-BenchmarkMakeEmptySlice-8   	200000000	         8.31 ns/op
-BenchmarkMakeEmptySlice-8   	200000000	         7.98 ns/op
-BenchmarkMakeEmptySlice-8   	200000000	         8.69 ns/op
+BenchmarkMakeEmptySlice-8   	200000000	         6.77 ns/op
+BenchmarkMakeEmptySlice-8   	200000000	         6.52 ns/op
+BenchmarkMakeEmptySlice-8   	200000000	         6.30 ns/op
+BenchmarkMakeEmptySlice-8   	300000000	         5.89 ns/op
+BenchmarkMakeEmptySlice-8   	200000000	         7.03 ns/op
 PASS
-ok  	_/home/quasilyte/CODE/go/bench	12.128s
-	Benchstat results:
+ok  	_/home/quasilyte/CODE/go/bench	10.375s
+  Benchstat results:
 name             old time/op  new time/op  delta
-EmptySliceLit-8  5.87ns ± 4%  8.17ns ± 6%  +39.17%  (p=0.008 n=5+5)
+EmptySliceLit-8  5.75ns ± 2%  6.50ns ± 9%  +13.12%  (p=0.008 n=5+5)
 ```
 
 If there are unit tests (non-benchmarks), you can specify `-run` flag for `go test`, as usual.
