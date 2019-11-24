@@ -9,6 +9,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"strings"
 )
 
 func main() {
@@ -47,8 +48,13 @@ func main() {
 	}
 
 	// The "Benchmark" prefix is added implicitly.
-	oldBench = "Benchmark" + oldBench
-	newBench = "Benchmark" + newBench
+	// But only if it doesn't look like a sub-bench selector.
+	if !strings.Contains(oldBench, "/") {
+		oldBench = "Benchmark" + oldBench
+	}
+	if !strings.Contains(newBench, "/") {
+		newBench = "Benchmark" + newBench
+	}
 
 	testArgs := flag.Args()[2:]
 	fmt.Println("  Running old benchmarks:")
